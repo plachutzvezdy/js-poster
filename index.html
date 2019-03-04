@@ -16,7 +16,7 @@
       var c = document.getElementById('xp');
       var ctx = c.getContext('2d');
 
-      var w, h, Mouse, Box;
+      var w, h, Cursor, Box;
 
       function init() {
       c.width = w = window.innerWidth;
@@ -31,14 +31,14 @@
         h: 0,
         img: new Image(),
         draw: function () {
-          this.x += Mouse.x - Mouse._x;
-          this.y += Mouse.y - Mouse._y;
+          this.x += Cursor.x - Cursor._x;
+          this.y += Cursor.y - Cursor._y;
           ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
         }
       };
 
 
-      Mouse = {
+      Cursor = {
         x: w/2,
         y: h/2,
         _x: 0,
@@ -73,39 +73,39 @@
 
         Box.w = Box.img.width;
         Box.h = Box.img.height;
-        Mouse.x = w/2 - Box.w/2;
-        Mouse.y = h/2 - Box.h/2;
+        Cursor.x = w/2 - Box.w/2;
+        Cursor.y = h/2 - Box.h/2;
         Box.draw();
 
-        c.addEventListener('mousedown', function (ev) {
-          Mouse.updatePos(ev.clientX, ev.clientY);
-          Mouse.updateDown(true);
-          Mouse.updateDrag();
+        c.addEventListener('Cursordown', function (ev) {
+          Cursor.updatePos(ev.clientX, ev.clientY);
+          Cursor.updateDown(true);
+          Cursor.updateDrag();
         });
-        c.addEventListener('mousemove', function (ev) {
-          Mouse.updatePos(ev.clientX, ev.clientY);
-          if (Mouse.drag) Box.draw();
+        c.addEventListener('Cursormove', function (ev) {
+          Cursor.updatePos(ev.clientX, ev.clientY);
+          if (Cursor.drag) Box.draw();
         });
-        c.addEventListener('mouseup', function (ev) {
-          Mouse.updateDown(false);
-          Mouse.updateDrag();
+        c.addEventListener('Cursorup', function (ev) {
+          Cursor.updateDown(false);
+          Cursor.updateDrag();
         });
 
         c.addEventListener('touchstart', function(ev) {
           ev.preventDefault();
-          Mouse.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
-          Mouse.updateDown(true);
-          Mouse.updateDrag();
+          Cursor.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+          Cursor.updateDown(true);
+          Cursor.updateDrag();
         });
         c.addEventListener('touchmove', function(ev) {
           ev.preventDefault();
-          Mouse.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
-          if (Mouse.drag) Box.draw();
+          Cursor.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+          if (Cursor.drag) Box.draw();
         });
         c.addEventListener('touchend', function(ev) {
           ev.preventDefault();
-          Mouse.updateDown(false);
-          Mouse.updateDrag();
+          Cursor.updateDown(false);
+          Cursor.updateDrag();
         });
       };
       }
