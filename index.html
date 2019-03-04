@@ -34,8 +34,6 @@
           this.x += Mouse.x - Mouse._x;
           this.y += Mouse.y - Mouse._y;
           ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-          // ctx.strokeStyle = 'black';
-          // ctx.strokeRect(this.x, this.y, this.w, this.h);
         }
       };
 
@@ -72,7 +70,7 @@
 
       Box.img.src = 'https://i.ibb.co/9N97gGG/error.png';
       Box.img.onload = function () {
-        // sloppy, but works
+
         Box.w = Box.img.width;
         Box.h = Box.img.height;
         Mouse.x = w/2 - Box.w/2;
