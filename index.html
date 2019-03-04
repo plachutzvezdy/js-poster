@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>psy+code</title>
+    <script src="jquery.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <canvas id="windows"></canvas>
+
+
+
+    <script type="text/javascript">
+      var c = document.getElementById('windows');
+      var ctx = c.getContext('2d');
+
+      var w, h, Mouse, Box;
+
+      function init() {
+        c.width = w = window.innerWidth;
+        c.height = h = window.innerHeight;
+
+        ctx.imageSmoothingEnabled= false;
+
+        Box = {
+          x: 0,
+          y: 0,
+          w: 0,
+          h: 0,
+          img: new Image(),
+          draw: function () {
+            this.x += Mouse.x - Mouse._x;
+            this.y += Mouse.y - Mouse._y;
+            ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+          }
+        };
+
+
+        Mouse = {
+          x: w/2,
+          y: h/2,
+          _x: 0,
+          _y: 0,
+          drag: false,
+          down: false,
+          updatePos: function (x, y) {
+            this._x = this.x;
+            this._y = this.y;
+            this.x = x;
+            this.y = y;
+          },
+          updateDown: function (state) {
+            this.down = state;
+          },
+          updateDrag: function () {
+            if (this.down
+               && this.x > Box.x
+               && this.x < Box.x + Box.w
+               && this.y > Box.y
+               && this.y < Box.y + Box.h) {
+              this.drag = true;
+            } else {
+              this.drag = false;
+            }
+          }
+        };
+
+
+        Box.img.src = 'https://i.ibb.co/FYGhnV4/error.png';
+        Box.img.onload = function () {
+
+          Box.w = Box.img.width;
+          Box.h = Box.img.height;
+          Mouse.x = w/2 - Box.w/2;
+          Mouse.y = h/2 - Box.h/2;
+          Box.draw();
+
+          c.addEventListener('mousedown', function (ev) {
+            Mouse.updatePos(ev.clientX, ev.clientY);
+            Mouse.updateDown(true);
+            Mouse.updateDrag();
+          });
+          c.addEventListener('mousemove', function (ev) {
+            Mouse.updatePos(ev.clientX, ev.clientY);
+            if (Mouse.drag) Box.draw();
+          });
+          c.addEventListener('mouseup', function (ev) {
+            Mouse.updateDown(false);
+            Mouse.updateDrag();
+          });
+
+          c.addEventListener('touchstart', function(ev) {
+            ev.preventDefault();
+            Mouse.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+            Mouse.updateDown(true);
+            Mouse.updateDrag();
+          });
+          c.addEventListener('touchmove', function(ev) {
+            ev.preventDefault();
+            Mouse.updatePos(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+            if (Mouse.drag) Box.draw();
+          });
+          c.addEventListener('touchend', function(ev) {
+            ev.preventDefault();
+            Mouse.updateDown(false);
+            Mouse.updateDrag();
+          });
+        };
+      }
+
+
+      init();
+
+      window.addEventListener('resize', init);
+    </script>
+  </div>
+</body>
+</html>

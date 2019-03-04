@@ -1,0 +1,8 @@
+body {
+  overflow: hidden;
+}
+
+#windows {
+  background: url('https://i.ibb.co/cFHzMcQ/background.jpg') no-repeat fixed center;
+  background-size: cover;
+}
