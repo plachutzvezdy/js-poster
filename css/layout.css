@@ -12,7 +12,7 @@ body {
 .desktop {
   position: absolute;
   z-index: 100;
-  margin: 83px 15px 0px 30px;
+  margin: 80px 15px 0px 30px;
   text-align: center;
   display: block;
   }
