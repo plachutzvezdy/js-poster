@@ -3,6 +3,63 @@ body {
 }
 
 #xp {
-  background: url('https://i.ibb.co/cFHzMcQ/background.jpg') no-repeat fixed center;
+  background: url('https://i.ibb.co/YBbKmJp/background.png') no-repeat fixed center;
   background-size: cover;
+  z-index: 0;
+  position: absolute;
+}
+
+.desktop {
+  position: absolute;
+  z-index: 100;
+  margin: 83px 15px 0px 30px;
+  text-align: center;
+  display: block;
+  }
+
+  .start {
+  background-color: #0055ff;
+  height: 38px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 2px solid #efefef;
+  padding: 3px;
+  z-index: 1000;
+}
+
+/*
+.start-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  line-height: 25px;
+  font-weight: bold;
+  padding-left: 31px;
+  padding-right: 7px;
+  height: 29px;
+  background-image: url('http://vignette4.wikia.nocookie.net/logopedia/images/b/b3/Windows_logo_(Pre-XP)_alt._color.svg.png/revision/latest?cb=20160311145452');
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-position: 5px center;
+  background-color: $color-dock;
+  @include border-color($border-light, $border-dark);
+  &.active {
+    @include border-color($border-dark, $border-light);
+  }
+} */
+
+.desktop img {
+  display: block;
+  margin: 5px auto;
+}
+
+p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  color: #0055ff;
+  font-size: 18px;
+  margin-bottom: 30px;
+  }
 }
