@@ -23,31 +23,40 @@ body {
   width: 100%;
   position: fixed;
   bottom: 0;
-  border-top: 2px solid #efefef;
+  border-top: 3px solid #0055ff;
   padding: 3px;
   z-index: 1000;
+  padding-left: 25px;
+  padding-top: 5px;
 }
 
-/*
+
 .start-btn {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
   display: inline-block;
   text-decoration: none;
-  color: black;
   line-height: 25px;
   font-weight: bold;
-  padding-left: 31px;
-  padding-right: 7px;
-  height: 29px;
-  background-image: url('http://vignette4.wikia.nocookie.net/logopedia/images/b/b3/Windows_logo_(Pre-XP)_alt._color.svg.png/revision/latest?cb=20160311145452');
+  padding-top: 5px;
+  padding-left: 47px;
+  height: 100px;
+  width: 70px;
+  background-image: url('https://i.ibb.co/PxQ1kZ6/start.png');
   background-repeat: no-repeat;
-  background-size: 22px;
-  background-position: 5px center;
-  background-color: $color-dock;
-  @include border-color($border-light, $border-dark);
-  &.active {
-    @include border-color($border-dark, $border-light);
-  }
-} */
+  background-size: 40px;
+  background-position: bottom 1px center 20px;
+  background-color: #0055ff;
+}
+.start-btn.active {
+  border-top: 2px solid #222;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-left: 2px solid #222;
+}
 
 .desktop img {
   display: block;
@@ -63,3 +72,116 @@ p {
   margin-bottom: 30px;
   }
 }
+
+.start-menu {
+  position: absolute;
+  bottom: 38px;
+  background: #c0c0c0;
+  border-top: 2px solid white;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  border-left: 2px solid white;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  display: none;
+}
+.start-menu.open {
+  display: block;
+}
+.start-menu .title-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 37px;
+  height: 100%;
+}
+.start-menu .title-container .title {
+  position: absolute;
+  transform: rotate(-90deg);
+  color: white;
+  top: 430px;
+  left: -51px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.start-menu .title-container .title {
+  font-weight: 100;
+}
+.start-menu hr {
+  margin: 0 4px 0 40px;
+}
+.start-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.start-menu ul li {
+  padding: 18px 100px 18px 100px;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position: 48px center;
+  background-size: 33px;
+}
+
+.start-menu ul li:hover {
+  background-color: #000184;
+  color: white;
+  cursor: pointer;
+}
+
+/* .start-menu {
+  position: absolute;
+  bottom: 38px;
+   background: #c0c0c0;
+  border-top: 2px solid white;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  border-left: 2px solid white;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  display: none;
+}
+.start-menu.open {
+  display: block;
+}
+.start-menu .title-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 37px;
+  height: 100%;
+}
+.start-menu .title-container .title {
+  position: absolute;
+  transform: rotate(-90deg);
+  color: white;
+  top: 430px;
+  left: -51px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.start-menu .title-container .title span {
+  font-weight: 100;
+}
+.start-menu hr {
+  margin: 0 4px 0 40px;
+}
+.start-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.start-menu ul li {
+  padding: 18px 100px 18px 100px;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position: 48px center;
+  background-size: 33px;
+}
+.start-menu ul li:hover {
+  background-color: #000184;
+  color: white;
+  cursor: pointer;
+} */

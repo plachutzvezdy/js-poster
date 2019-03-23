@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>psy+code</title>
-    <script src="jquery.js" charset="utf-8"></script>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/jquery-ui.min.js" charset="utf-8"></script>
+    <script src="js/jquery.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -28,8 +30,24 @@
     </div>
 
     <div class="start">
-      <a class="start-btn" href="#0"></a>
+      <a class="start-btn" href="#0">Пуск</a>
+      <div class="start-menu">
+      <div class="title-container">
+        <div class="title">PSY+CODE</div>
+      </div>
+      <ul>
+        <hr />
+        <li class="computer">О клинике</li>
+        <li class="bin">Записаться</li>
+        <li class="documents">Лечение</li>
+        <hr />
+        <li class="log-off ok">Выйти из системы</li>
+        <li class="shut-down ok">Выход</li>
+      </ul>
     </div>
+    </div>
+
+
 
 
 
@@ -135,7 +153,14 @@
       init();
 
       window.addEventListener('resize', init);
+
+
+    $('.start-btn').on('click', function(e){
+     e.preventDefault();
+    $(this).toggleClass('active');
+    $('.start-menu').toggleClass('open');
+    });
+
     </script>
-  </div>
 </body>
 </html>
