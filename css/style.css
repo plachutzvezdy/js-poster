@@ -1,6 +1,5 @@
 @import "reset.css";
 @import "layout.css";
-@import "../js/jquery.js";
-@import "../js/jquery-ui.min.js";
-@import "../js/jquery.min.js";
+@import "start-menu.css";
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');

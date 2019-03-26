@@ -1,0 +1,108 @@
+.start-menu {
+	position: absolute !important;
+	left: 2px;
+	bottom: 25px;
+	width: auto;
+	padding-left: 21px;
+	height: 340px;
+	max-height: calc(100vh - 26px);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+  z-index: 1000;
+}
+.start-menu-titlebar {
+	flex: 0 0 auto;
+	width: 21px;
+}
+.start-menu-content {
+	overflow: auto;
+	padding: 15px;
+}
+
+.taskbar {
+  border-top: 2px solid #fff;
+	position: absolute;
+	z-index: 2000;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 45px;
+	display: flex;
+	flex: 1;
+}
+
+.start-button {
+	flex-shrink: 0;
+	padding: 5px 9px;
+  background-image: url('https://i.ibb.co/PxQ1kZ6/start.png');
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: 10px;
+}
+
+
+.taskbar {
+	background: #0055ff;
+}
+
+.start-menu-titlebar {
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color: #0055ff;
+}
+.start-menu li a {
+  text-decoration: none;
+  color: white;
+	display: block;
+	padding: 10px 0;
+}
+
+.start-menu li a:hover {
+  text-decoration: underline;
+}
+
+.the-thing-heading:before {
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.start-menu,
+button {
+  background: #0055ff;
+	padding-left: 30px;
+	vertical-align: middle;
+	font-family: 'Roboto', sans-serif;
+  color: #fff;
+	font-size: 20px;
+	position: relative;
+  border-color: #0055ff;
+}
+
+b {
+  padding-left: 50px;
+}
+
+/* МЕДИА-ЗАПРОСЫ */
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .taskbar {
+		height: 40px;
+	}
+
+	button {
+		font-size: 30px;
+	}
+}
+
+
+@media (max-width: 1025px) and (min-width: 769px) {
+	.taskbar {
+		height: 40px;
+	}
+
+	button {
+		font-size: 25px;
+	}
+}
