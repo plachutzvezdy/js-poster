@@ -6,6 +6,7 @@
     <script src="js/jquery.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/start-menu.css">
+    <link rel="stylesheet" href="css/exit.css">
   </head>
 
   <body>
@@ -69,6 +70,15 @@
     </div>
 
     <script type="text/javascript">
+
+
+      document.body.className = 'fade';
+      setTimeout(function(){
+      document.body.className = 'appear';
+      }, 0);
+
+
+
       var c = document.getElementById('xp');
       var ctx = c.getContext('2d');
 
@@ -172,5 +182,5 @@
     </script>
 
 
-    </body>
-    </html>
+</body>
+</html>

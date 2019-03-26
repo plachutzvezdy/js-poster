@@ -6,6 +6,7 @@
     <script src="js/jquery.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/start-menu.css">
+    <link rel="stylesheet" href="css/exit.css">
   </head>
 
   <body>
@@ -28,7 +29,7 @@
             <br>
             <br>
             <br>
-            <li><a href="exit1.html">Выйти</a></li>
+            <li><a href="exit2.html">Выйти</a></li>
           </ul>
       </div>
     </div>
@@ -69,6 +70,15 @@
     </div>
 
     <script type="text/javascript">
+
+
+      document.body.className = 'fade';
+      setTimeout(function(){
+      document.body.className = 'appear';
+      }, 0);
+
+
+
       var c = document.getElementById('xp');
       var ctx = c.getContext('2d');
 
@@ -124,7 +134,7 @@
       };
 
 
-      Box.img.src = 'https://i.ibb.co/KjLmN8P/1.png';
+      Box.img.src = 'https://i.ibb.co/M9f9MqX/2.png';
       Box.img.onload = function () {
 
         Box.w = Box.img.width;
@@ -172,5 +182,5 @@
     </script>
 
 
-    </body>
-    </html>
+</body>
+</html>
