@@ -86,20 +86,19 @@ b {
 
 /* МЕДИА-ЗАПРОСЫ */
 
-@media (min-width: 320px) and (max-width: 768px) {
-  .taskbar {
-		height: 40px;
+@media (min-width: 769px) and (max-width: 1024px) {
+	.taskbar {
+		height: 55px;
 	}
 
 	button {
-		font-size: 30px;
+		font-size: 25px;
 	}
 }
 
-
-@media (max-width: 1025px) and (min-width: 769px) {
-	.taskbar {
-		height: 40px;
+@media (min-width: 320px) and (max-width: 768px) {
+  .taskbar {
+		height: 50px;
 	}
 
 	button {
