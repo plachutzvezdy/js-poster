@@ -8,3 +8,7 @@ body.appear{
   opacity: 0;
 
 }
+
+.turnon {
+  z-index: -10000;
+}
